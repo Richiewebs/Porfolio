@@ -1,7 +1,7 @@
 import React from 'react'
 import img from '../assets/logo.png'
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <div>
       <nav className='w-full h-20 bg-white font-sans shadow-md pt-6 h-10 '>
@@ -13,7 +13,7 @@ const Navbar = () => {
                     <li>Projects</li>
                 </ul>
                 <div className='flex'>
-                <button class="btn" className='w-28 h-10 bg-custom-gradient rounded-md text-white'>Contact</button>
+                <button class="btn" className='w-28 h-10 bg-custom-gradient rounded-md text-white'>{props.text}</button>
             </div>
             </div>
       </nav>
