@@ -4,7 +4,7 @@ import img from '../assets/Rectangle.png';
 const Hero = () => {
   const [displayedText, setDisplayedText] = useState('');
   const fullText = "Hey there! I'm Richelle and I'm a ";
-  const highlightedText = "FRONTEND DEVELOPER";
+  const highlightedText = "FRONTEND DEVELOPER.";
 
   useEffect(() => {
     let index = 0;
@@ -17,7 +17,7 @@ const Hero = () => {
         setTimeout(() => {
           setDisplayedText('');
           index = -1; // Reset to -1 because it will be incremented to 0 at the start of the next interval
-        }, 2000); // Wait 2 seconds before restarting
+        }, 1000); // Wait 2 seconds before restarting
       }
       index++;
     }, 100); // Adjust the interval speed as needed
