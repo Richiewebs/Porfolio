@@ -6,3 +6,40 @@
 .btn{
   padding: 12px;
 }
+
+
+.vertical-line-list {
+  list-style: none; /* Remove default bullets */
+  position: relative;
+  padding-left: 2rem; /* Adjust padding to accommodate the custom bullets */
+}
+.vertical-line-list::before {
+  content: '';
+  position: absolute;
+  left: 1.9rem; /* Position the line through the middle of the bullet */
+  top: -25px;
+  height: 100px;
+  bottom: 0;
+  width: 5px;
+  background-color:  #4B9CD2;
+   /* Change the color of the line if needed */
+}
+.vertical-line-list li {
+  
+  position: relative;
+  padding-left: 1.5rem; /* Adjust padding to accommodate the custom bullets */
+  margin-bottom: 0.5rem; /* Add space between list items */
+}
+.vertical-line-list li::before {
+  content: '•'; /* Use a bullet character */
+  font-size: 6rem; /* Adjust the size of the bullet */
+  color:  #4641C3;
+  /* Change the color of the bullet if needed */
+  position: absolute;
+  left: -1.25rem; /* Position the bullet to the left of the text */
+  top: 50%;
+  transform: translateY(-50%); /* Center the bullet vertically */
+}
+
+      
+    
