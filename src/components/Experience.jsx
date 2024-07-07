@@ -1,9 +1,11 @@
 import React from 'react';
 import umat from '../assets/umat.png';
 import aaenics from '../assets/aaenics.png';
+import Tab from './Tab';
 
 const Experience = () => {
   return (
+    <div id='experience'>
     <div className='w-full bg-exbg p-6 shadow-md'>
       <h1 className='text-btn2 font-bold text-2xl text-center pb-5'>Education & Experience</h1>
       <div className='p-10 flex'>
@@ -31,6 +33,10 @@ const Experience = () => {
             </ul>
           </div>
       </div>
+
+    </div>
+    
+    
     </div>
   );
 }
