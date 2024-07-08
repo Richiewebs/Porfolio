@@ -22,7 +22,7 @@ const Skills = () => {
   ];
 
   return (
-    <div id = 'skills' className='bg-slate shadow-md'>
+    <div id = 'skills' className='bg-slate'>
       <h1 className='text-center p-6 text-btn2 font-bold text-2xl'>Skills</h1>
       <div className='m-auto  w-10/12 gap-10 place-content-around p-10 flex flex-wrap justify-around'>
         {images.map((image, index) => (

@@ -5,7 +5,7 @@ import Tab from './Tab';
 
 const About = () => {
   return (
-    <div className='flex flex-col'>
+    <div id = 'about' className='flex flex-col'>
     <div className='flex p-24 space-x-20'>
       <div className='w-2/5 relative'>
         <div className='absolute -top-5 left-32 w-4/5  h-full'>

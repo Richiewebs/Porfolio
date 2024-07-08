@@ -6,7 +6,7 @@ import Tab from './Tab';
 const Experience = () => {
   return (
     <div id='experience'>
-    <div className='w-full bg-exbg p-6 shadow-md'>
+    <div className='w-full bg-exbg p-6'>
       <h1 className='text-btn2 font-bold text-2xl text-center pb-5'>Education & Experience</h1>
       <div className='p-10 flex'>
         <div className='flex items-start space-y-28'>
