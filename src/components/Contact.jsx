@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <div id='contact' className='w-4/5 bg-white shadow m-auto flex rounded p-5 my-20'>
         <div className='w-1/2 '>
-            <h1 className='text-center p-3 text-xl'>Contact Me</h1>
+            <h1 className='text-center p-3 text-xl font-bold opacity-4'>Contact Me</h1>
             <img src={img} alt="" className=''/>
         </div>
         <div className='w-1/2 p-5 h-4/5'>

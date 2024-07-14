@@ -7,6 +7,7 @@ import reactIcon from '../assets/react.png';
 import githubIcon from '../assets/github.png';
 import flutterIcon from '../assets/flutter.jpeg';
 import arduinoIcon from '../assets/arduino.jpeg';
+import mongodb from '../assets/mongodb.png';
 import Skilbox from './Skilbox';
 
 const Skills = () => {
@@ -18,7 +19,8 @@ const Skills = () => {
     { name: 'React', icon: reactIcon },
     { name: 'GitHub', icon: githubIcon },
     { name: 'Flutter', icon: flutterIcon },
-    { name: 'Arduino', icon: arduinoIcon }
+    { name: 'Arduino', icon: arduinoIcon },
+    { name: 'Mongodb', icon: mongodb }
   ];
 
   return (

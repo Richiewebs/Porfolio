@@ -20,7 +20,8 @@ export default {
       'piccol':  'rgba(13, 55, 229, 0.5)',
       'bocol':  '#37ACFA',
       'slate': '#f1f5f9',
-      'footercol': 'rgba(24, 19, 74, 1)'
+      'footercol': 'rgba(24, 19, 74, 1)',
+      'hov': '#06b6d4'
 
 
 
