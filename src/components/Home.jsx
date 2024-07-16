@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { motion, useInView } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import About from '../components/About';
@@ -6,37 +7,33 @@ import Experience from '../components/Experience';
 import Project from '../components/Project';
 import Skills from '../components/Skills';
 import Footer from '../components/Footer';
-import Contact from './Contact';
-import Back from './Back';
-import {useInView} from 'framer-motion';
+import ContactUs from '../components/Contact'; // Correct path to Contact component
+import Back from '../components/Back'; // Correct path to Back component
 
 const Home = () => {
   // Create refs for each section
-  const about2 = useRef(null);
   const aboutRef = useRef(null);
   const experienceRef = useRef(null);
   const projectRef = useRef(null);
   const skillsRef = useRef(null);
   const contactRef = useRef(null);
-  const topRef = useRef(null); // Reference to the top of the page
-  const aboutRefInView = useInView(about2, {once: true});
-  
+  const topRef = useRef(null);
+
+  const isAboutInView = useInView(aboutRef, { once: false, threshold: 0.2 });
+  const isExperienceInView = useInView(experienceRef, { once: false, threshold: 0.2 });
+  const isProjectInView = useInView(projectRef, { once: false, threshold: 0.2 });
+  const isSkillsInView = useInView(skillsRef, { once: false, threshold: 0.2 });
+  const isContactInView = useInView(contactRef, { once: false, threshold: 0.2 });
 
   const [showBackButton, setShowBackButton] = useState(false);
 
-  // Function to scroll to a specific section
   const scrollToRef = (ref) => {
     ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
-  // Handle scroll event
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY === 0) {
-        setShowBackButton(false);
-      } else {
-        setShowBackButton(true);
-      }
+      setShowBackButton(window.scrollY > 0);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -45,24 +42,68 @@ const Home = () => {
     };
   }, []);
 
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } }
+  };
+
   return (
-    <div ref={topRef}> {/* Assign ref to the top of the page */}
+    <div ref={topRef}>
       <Navbar
         text='Contact'
-        scrollToRef={scrollToRef} // Pass scrollToRef function as prop
+        scrollToRef={() => scrollToRef(contactRef)}
       />
-      <Hero id="hero" /> {/* You can add id to each section for scrolling */}
+      <Hero id="hero" />
       
-      <About ref={aboutRef} id="about" /> {/* Assign ref to each section */}
-      
+      <motion.section
+        ref={aboutRef}
+        initial="hidden"
+        animate={isAboutInView ? "visible" : "hidden"}
+        variants={sectionVariants}
+      >
+        <About id="about" />
+      </motion.section>
+
       <div className='bg-backg-gradient'>
-        <Experience ref={experienceRef} id="experience" />
-        <Project ref={projectRef} id="projects" />
-        <Skills ref={skillsRef} id="skills" />
-        <Contact ref={contactRef} id='contact'></Contact>
+        <motion.section
+          ref={experienceRef}
+          initial="hidden"
+          animate={isExperienceInView ? "visible" : "hidden"}
+          variants={sectionVariants}
+        >
+          <Experience id="experience" />
+        </motion.section>
+
+        <motion.section
+          ref={projectRef}
+          initial="hidden"
+          animate={isProjectInView ? "visible" : "hidden"}
+          variants={sectionVariants}
+        >
+          <Project id="projects" />
+        </motion.section>
+
+        <motion.section
+          ref={skillsRef}
+          initial="hidden"
+          animate={isSkillsInView ? "visible" : "hidden"}
+          variants={sectionVariants}
+        >
+          <Skills id="skills" />
+        </motion.section>
+
+        <motion.section
+          ref={contactRef}
+          initial="hidden"
+          animate={isContactInView ? "visible" : "hidden"}
+          variants={sectionVariants}
+        >
+          <ContactUs id='contact' />
+        </motion.section>
+
         <Footer />
         {showBackButton && (
-          <Back scrollToRef={scrollToRef} topRef={topRef} /> 
+          <Back scrollToRef={() => scrollToRef(topRef)} />
         )}
       </div>
     </div>
