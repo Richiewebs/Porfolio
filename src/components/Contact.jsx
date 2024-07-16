@@ -32,7 +32,7 @@ export const ContactUs = () => {
           <form ref={form} onSubmit={sendEmail}>
             <Input type='text' text='Full Name' name='user_name' />
             <Input type='email' text='Email' name='user_email' />
-            <textarea name='message' placeholder='Message' className='border-2 outline-none p-10 w-full mt-10'></textarea>
+            <textarea name='message' placeholder='Message' className='border-2 resize-none outline-none p-10 w-full mt-10'></textarea>
             <input value='Send' type='submit' className='w-32 h-10 bg-custom-gradient rounded-md  mt-5 text-white hover:bg-hov hover:transition duration-300 ease-in-out' />
           </form>
         </div>
