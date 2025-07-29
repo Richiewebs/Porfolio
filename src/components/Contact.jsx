@@ -28,7 +28,7 @@ export const ContactUs = () => {
         <img src={img} alt="Contact" className='' />
       </div>
       <div className='w-1/2 p-5 h-4/5'>
-      <h1 className='text-center p-3 text-[32px] text-licol'>Contact Me</h1>
+      <h1 className='text-center p-3 text-[32px] text-licol'>CONTACT ME</h1>
         <div className='flex flex-col w-full space-y-10'>
           
           <form ref={form} onSubmit={sendEmail}>
