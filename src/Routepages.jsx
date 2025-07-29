@@ -10,6 +10,7 @@ const Routepages = () => {
   return (
     <BrowserRouter>
         <Routes>
+          <Route path = '/' element={<Home/>}></Route>
             <Route path = '/home' element={<Home/>}></Route>
             <Route path = '/experience' element={<Experience/>}></Route>
             <Route path = '/about' element={<About/>}></Route>
